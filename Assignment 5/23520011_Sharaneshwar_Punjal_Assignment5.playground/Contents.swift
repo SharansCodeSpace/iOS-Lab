@@ -239,13 +239,13 @@ struct Circle {
     var radius: Double
     static let pi: Double = 3.14159
     
-    static func area(radius: Double) -> Double {
+    static func area(of radius: Double) -> Double {
         return pi * radius * radius
     }
 }
 
 print("\n-------------------------------------------------\n")
-print("Area of circle with radius 5: \(Circle.area(radius: 5))")
+print("Area of circle with radius 5: \(Circle.area(of: 5))")
 
 // 16. Define a struct Customer with properties: name (String) and id (Int). Use an initializer to set the properties using 'self'. Create an instance and display details.
 struct Customer {

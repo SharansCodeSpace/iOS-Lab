@@ -1,7 +1,5 @@
 //IOS ASSIGNMENT 2
 
-import Foundation
-
 // 1. Addition, Subtraction, Multiplication, and Division
 let num1 = 10
 let num2 = 5
