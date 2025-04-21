@@ -55,4 +55,25 @@ class EditViewController: UIViewController {
         tripManager?.updateTrip(updatedTrip)
         navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func deleteButtonTapped(_ sender: Any) {
+        guard let index = tripIndex else { return }
+            if let trip = tripManager?.getAllTrips()[index] {
+                tripManager?.deleteTrip(by: trip.id)
+
+                let alert = UIAlertController(title: "Deleted", message: "Trip Deleted Successfully", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
+                    if let navigationController = self.navigationController {
+                        let viewControllers = navigationController.viewControllers
+                        if viewControllers.count >= 3 {
+                            navigationController.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
+                        } else {
+                            navigationController.popViewController(animated: true)
+                        }
+                    }
+                })
+                present(alert, animated: true, completion: nil)
+            }
+    }
+    
 }
